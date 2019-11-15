@@ -3,7 +3,7 @@
     <div>
       <a href="#" v-on:click="scroll">{{ title }}</a>
     </div>
-    <div>
+    <div class="hide-on-mobile">
       <a href="#about" v-on:click="scroll">About</a>
       <a href="#projects" v-on:click="scroll">Projects</a>
       <a href="#directions" v-on:click="scroll">Directions</a>
@@ -63,6 +63,11 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 500px){
+  .hide-on-mobile{
+    display:none;
+  }
+}
 nav{
   z-index:999999;
   position:fixed;
