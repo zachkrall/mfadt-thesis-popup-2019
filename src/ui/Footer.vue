@@ -24,6 +24,8 @@ export default {
 <style scoped>
 footer{
   padding: var(--padding);
+  max-width:900px;
+  margin:0 auto;
 }
 footer > div{
   display:inline-block;

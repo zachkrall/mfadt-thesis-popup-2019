@@ -20,7 +20,8 @@ body {
 
 section{
   padding:var(--padding);
-  margin-bottom: calc( var(--padding) * 3);
+  margin: 0 auto calc( var(--padding) * 3) auto;
+  max-width:900px;
 }
 
 section h1{

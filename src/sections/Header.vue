@@ -88,6 +88,11 @@ header h2{
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 500px){
+  #bottom_text{
+    display:block;
+  }
+}
 #bottom_text > * {
   font-size:inherit;
 }
