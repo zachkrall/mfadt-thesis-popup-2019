@@ -19,7 +19,7 @@
     </div>
     </div>
     <div class="grid">
-      <div v-for="p in visible">
+      <div v-for="(p, key) in visible" v-bind:key="key">
         <h3>Project Title</h3>
         <h4>Student</h4>
         <p>Short project description</p>
@@ -52,8 +52,6 @@ export default {
     filter(e){
 
       document.getElementById('filter-ul').classList.toggle('active');
-
-      console.log(e);
 
       Array.from(
         document.getElementsByClassName('filter-item')
@@ -115,18 +113,6 @@ p{
   padding: 0 0 calc( var(--padding) * 0.5 ) 0;
 }
 
-a.btn{
-  color:inherit;
-  border:1px solid var(--text);
-  border-radius: 5px;
-  text-decoration:none;
-  padding: 0.25rem 0.3rem;
-  margin-right:0.25rem;
-}
-a.btn:hover{
-  background: var(--text);
-  color: var(--bg);
-}
 
 button{
   font-size:inherit;
@@ -146,7 +132,7 @@ ul, li{ list-style:none;margin:0;padding:0;}
   align-items:top;
 }
 #filter span{
-  padding: 0.4rem 0.4rem 0.4rem 0;
+  padding: 0.25rem 0.3rem 0.25rem 0;
 }
 #filter div{
   display:inline-block;
@@ -169,7 +155,7 @@ ul, li{ list-style:none;margin:0;padding:0;}
 #filter ul li.selected,
 #filter ul.active li{
   display:block;
-  padding: 0.4rem 0.4rem;
+  padding: 0.25rem 0.3rem;
   cursor:pointer;
 }
 #filter ul li.selected,
