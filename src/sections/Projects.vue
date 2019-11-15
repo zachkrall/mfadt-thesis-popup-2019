@@ -2,17 +2,17 @@
   <section id="projects">
     <h1>Student Projects</h1>
     <div class="filter">
-      Thesis Group:
-      <button v-on:click="filter()">All</button>
-      <button v-on:click="filter('anezka')">Anezka Sebek</button>
-      <button v-on:click="filter('brad')">Brad MacDonald</button>
-      <button v-on:click="filter('aya')">Aya Karpinska</button>
-      <button v-on:click="filter('kyle')">Kyle Li</button>
-      <button v-on:click="filter('katherine')">Katherine Moriwaki</button>
-      <button v-on:click="filter('john')">John Sharp</button>
-      <button v-on:click="filter('mattie')">Mattie Brice</button>
-      <button v-on:click="filter('sven')">Sven Travis</button>
-      <button v-on:click="filter('elizabeth')">Elizabeth Stark</button>
+      <div id="border"></div>
+      <button id="all-button" v-on:click="filter">All</button>
+      <button data-thesis="anezka" v-on:click="filter">Anezka Sebek</button>
+      <button data-thesis="brad" v-on:click="filter">Brad MacDonald</button>
+      <button data-thesis="aya" v-on:click="filter">Aya Karpinska</button>
+      <button data-thesis="kyle" v-on:click="filter">Kyle Li</button>
+      <button data-thesis="katherine" v-on:click="filter">Katherine Moriwaki</button>
+      <button data-thesis="john" v-on:click="filter">John Sharp</button>
+      <button data-thesis="mattie" v-on:click="filter">Mattie Brice</button>
+      <button data-thesis="sven" v-on:click="filter">Sven Travis</button>
+      <button data-thesis="elizabeth" v-on:click="filter">Elizabeth Stark</button>
     </div>
     <div class="grid">
       <div v-for="p in visible">
@@ -46,7 +46,23 @@ export default {
     }
   },
   methods: {
-    filter(label){
+    filter(event){
+      console.log(event);
+      let e = event;
+      let t = e.target.offsetTop;
+      let l = e.target.offsetLeft;
+      let h = e.target.clientHeight;
+      let w = e.target.clientWidth;
+
+      let b = document.getElementById('border');
+
+      let label = e.target.getAttribute('data-thesis');
+
+      b.style.width = w + 'px';
+      b.style.height = h + 'px';
+      b.style.top = t + 'px';
+      b.style.left = l + 'px';
+
       if( !label ){
         this.visible = this.projects;
       } else {
@@ -55,6 +71,20 @@ export default {
         });
       }
     }
+  },
+  mounted: function (){
+    let e = document.getElementById('all-button');
+    let t = e.offsetTop;
+    let l = e.offsetLeft;
+    let h = e.clientHeight;
+    let w = e.clientWidth;
+
+    let b = document.getElementById('border');
+
+    b.style.width = w + 'px';
+    b.style.height = h + 'px';
+    b.style.top = t + 'px';
+    b.style.left = l + 'px';
   }
 };
 </script>
@@ -103,5 +133,23 @@ a.btn{
 a.btn:hover{
   background: var(--text);
   color: var(--bg);
+}
+
+button{
+  font-size:inherit;
+  color:inherit;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+div.filter{
+}
+div#border{
+  position:absolute;
+  top:0;left:0;
+  width:0;height:0;
+  border:1px solid var(--text);
+  border-radius:5px;
+  transition:all ease 0.3s;
 }
 </style>
