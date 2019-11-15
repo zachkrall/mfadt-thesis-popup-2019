@@ -63,11 +63,6 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 500px){
-  .hide-on-mobile{
-    display:none;
-  }
-}
 nav{
   z-index:999999;
   position:fixed;
@@ -85,6 +80,14 @@ nav{
   text-align:center;
 
   /* mix-blend-mode: difference; */
+}
+@media screen and (max-width: 500px){
+  nav{
+    justify-content:center;
+  }
+  .hide-on-mobile{
+    display:none;
+  }
 }
 nav a{
   color: inherit;
