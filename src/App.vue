@@ -15,19 +15,28 @@ export default {
   components: { Nav, Footer }
 }
 
-const root = document.documentElement;
 
-const hue = Math.random() * 360;
+const randomTheme = () => {
 
-const randomText = () => {
-  return `hsl(${hue}, 40%, 30%)`;
+  const root = document.documentElement;
+
+  let options = [
+    ['#2f2f2f', '#cccccc'],
+    ['#eeeeee', '#0a0c0a'],
+    ['#00FF00', '#001100'],
+    ['#8C0031', '#B672EA'],
+    ['#FFC9BF', '#A01E08'],
+    ['#9690ED','#087741']
+  ];
+
+  let theme = options[ parseInt(Math.random()*options.length)];
+
+  root.style.setProperty('--text', theme[0] );
+  root.style.setProperty('--bg', theme[1] );
 }
-const randomBg = () => {
-  return `hsl(${hue}, 30%, 90%)`;
-}
 
-root.style.setProperty('--text', randomText() );
-root.style.setProperty('--bg', randomBg() );
+randomTheme();
+
 </script>
 
 <style>

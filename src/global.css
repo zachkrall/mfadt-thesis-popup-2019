@@ -18,6 +18,10 @@ body {
   color: var(--text);
 }
 
+a{
+  color:inherit;
+}
+
 section{
   padding:var(--padding);
   margin: 0 auto calc( var(--padding) * 3) auto;

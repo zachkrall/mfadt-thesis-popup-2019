@@ -1,6 +1,13 @@
 <template>
   <section id="directions">
     <h1>Directions</h1>
+    <p>
+      6 East 16th Street<br/>
+      New York, NY
+    </p>
+    <div>
+
+    </div>
   </section>
 </template>
 

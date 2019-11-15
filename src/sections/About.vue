@@ -2,10 +2,8 @@
   <section id="about">
     <h1>About</h1>
     <p>
-      A Multi-Faceted Exploration of how design and technology intersect with the human condition.
-      We invite you to join us, the MFA Design + Technology class of 2019, as we showcase our works-in-progress from our first-semester Thesis Studios. It will be an unforgettable afternoon of testing the first full iterations of our thesis projects. Be ready for some unexpected interactions, food, drinks and a ton of inspiration!
-      Students, professors, alumni, folks from the industry, fields of research - you are all welcome! Guests are welcome!
-      This event is free. Refreshments will be served.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      include interaction design, physical computing, game design, new media art, digital fabrication, data visualization, and critical design.
     </p>
   </section>
 </template>

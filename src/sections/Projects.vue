@@ -1,25 +1,28 @@
 <template>
   <section id="projects">
     <h1>Student Projects</h1>
-    <div class="filter">
-      <div id="border"></div>
-      <button id="all-button" v-on:click="filter">All</button>
-      <button data-thesis="anezka" v-on:click="filter">Anezka Sebek</button>
-      <button data-thesis="brad" v-on:click="filter">Brad MacDonald</button>
-      <button data-thesis="aya" v-on:click="filter">Aya Karpinska</button>
-      <button data-thesis="kyle" v-on:click="filter">Kyle Li</button>
-      <button data-thesis="katherine" v-on:click="filter">Katherine Moriwaki</button>
-      <button data-thesis="john" v-on:click="filter">John Sharp</button>
-      <button data-thesis="mattie" v-on:click="filter">Mattie Brice</button>
-      <button data-thesis="sven" v-on:click="filter">Sven Travis</button>
-      <button data-thesis="elizabeth" v-on:click="filter">Elizabeth Stark</button>
+    <div id="filter">
+      <span>Viewing:</span>
+      <div>
+      <ul id="filter-ul" v-on:click="filter">
+        <li class="filter-item selected" id="all-button">All Thesis Sections</li>
+        <li class="filter-item" data-thesis="anezka">Anezka Sebek</li>
+        <li class="filter-item" data-thesis="brad">Brad MacDonald</li>
+        <li class="filter-item" data-thesis="aya">Aya Karpinska</li>
+        <li class="filter-item" data-thesis="kyle">Kyle Li</li>
+        <li class="filter-item" data-thesis="katherine">Katherine Moriwaki</li>
+        <li class="filter-item" data-thesis="john">John Sharp</li>
+        <li class="filter-item" data-thesis="mattie">Mattie Brice</li>
+        <li class="filter-item" data-thesis="sven">Sven Travis</li>
+        <li class="filter-item" data-thesis="elizabeth">Elizabeth Stark</li>
+      </ul>
+    </div>
     </div>
     <div class="grid">
       <div v-for="p in visible">
         <h3>Project Title</h3>
         <h4>Student</h4>
         <p>Short project description</p>
-        <p>{{ p.thesisGroup }}</p>
         <a class="btn" href="#">Website</a> <a class="btn" href="#">More Info</a>
       </div>
     </div>
@@ -46,22 +49,24 @@ export default {
     }
   },
   methods: {
-    filter(event){
-      console.log(event);
-      let e = event;
-      let t = e.target.offsetTop;
-      let l = e.target.offsetLeft;
-      let h = e.target.clientHeight;
-      let w = e.target.clientWidth;
+    filter(e){
 
-      let b = document.getElementById('border');
+      document.getElementById('filter-ul').classList.toggle('active');
+
+      console.log(e);
+
+      Array.from(
+        document.getElementsByClassName('filter-item')
+      )
+      .map( i => {
+        i.classList.remove('selected')
+      });
+
+      event.target.classList.add('selected');
+
+      document.getElementById('filter-ul').blur();
 
       let label = e.target.getAttribute('data-thesis');
-
-      b.style.width = w + 'px';
-      b.style.height = h + 'px';
-      b.style.top = t + 'px';
-      b.style.left = l + 'px';
 
       if( !label ){
         this.visible = this.projects;
@@ -73,18 +78,6 @@ export default {
     }
   },
   mounted: function (){
-    let e = document.getElementById('all-button');
-    let t = e.offsetTop;
-    let l = e.offsetLeft;
-    let h = e.clientHeight;
-    let w = e.clientWidth;
-
-    let b = document.getElementById('border');
-
-    b.style.width = w + 'px';
-    b.style.height = h + 'px';
-    b.style.top = t + 'px';
-    b.style.left = l + 'px';
   }
 };
 </script>
@@ -143,13 +136,44 @@ button{
   cursor:pointer;
 }
 div.filter{
+
 }
-div#border{
+
+ul, li{ list-style:none;margin:0;padding:0;}
+
+#filter{
+  display:flex;
+  align-items:top;
+}
+#filter span{
+  padding: 0.4rem 0.4rem 0.4rem 0;
+}
+#filter div{
+  display:inline-block;
+  position:relative;
+  flex-grow: 1;
+  z-index:99999999;
+}
+#filter ul{
   position:absolute;
   top:0;left:0;
-  width:0;height:0;
+  display:inline-block;
   border:1px solid var(--text);
   border-radius:5px;
-  transition:all ease 0.3s;
+  background:var(--bg);
+}
+
+#filter ul li{
+  display:none;
+}
+#filter ul li.selected,
+#filter ul.active li{
+  display:block;
+  padding: 0.4rem 0.4rem;
+  cursor:pointer;
+}
+#filter ul li.selected,
+#filter ul li:hover{
+  font-weight:bold;
 }
 </style>
