@@ -53,7 +53,7 @@ header{
   align-items: center;
   justify-content: center;
   background: var(--bg);
-  height:60vh;
+  height:100vh;
   min-height: 600px;
   color: var(--text);
 }

@@ -20,10 +20,10 @@ const root = document.documentElement;
 const hue = Math.random() * 360;
 
 const randomText = () => {
-  return `hsl(${hue}, 50%, 40%)`;
+  return `hsl(${hue}, 40%, 30%)`;
 }
 const randomBg = () => {
-  return `hsl(${hue}, 30%, 80%)`;
+  return `hsl(${hue}, 30%, 90%)`;
 }
 
 root.style.setProperty('--text', randomText() );
