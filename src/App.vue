@@ -24,9 +24,10 @@ const randomTheme = () => {
     ['#2f2f2f', '#cccccc'],
     ['#eeeeee', '#0a0c0a'],
     ['#00FF00', '#001100'],
-    ['#8C0031', '#B672EA'],
+    ['#B672EA', '#8C0031'],
     ['#FFC9BF', '#A01E08'],
-    ['#9690ED','#087741']
+    ['#087741', '#9690ED'],
+    ['#CAD4FF', '#2080BD']
   ];
 
   let theme = options[ parseInt(Math.random()*options.length)];

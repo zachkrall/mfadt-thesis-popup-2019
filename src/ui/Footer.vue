@@ -1,14 +1,7 @@
 <template>
-  <div>
-    <section>
-        <h2>Acknowledgments</h2>
-        <div><b>Zhane Lloyd</b>, Lorem Ipsum</div>
-        <div><b>Kat Obermeyer</b>, Lorem Ipsum</div>
-        <div><b>Jeffrey Geiringer</b>, Promotional Design<div>
-        <div><b>Zach Krall</b>, Website Development</div>
-    </section>
   <footer>
-    <div v-html="logo"></div>
+    <div v-html="logo">
+    </div>
     <div>
       <b>Parsons School of Design</b><br/>
       The New School<br/>
@@ -21,7 +14,6 @@
       <a href="https://twitter.com/mfadt/">Twitter</a>
     </div>
   </footer>
-</div>
 </template>
 
 <script>
@@ -29,15 +21,25 @@ export default {
   name: "Footer",
   data: function(){
     return {
-      logo: `<svg version="1.1" id="ParsonsLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 318.8 50.9" style="enable-background:new 0 0 318.8 50.9;" xml:space="preserve">
-      <g>
+      logo: `<svg version="1.1" id="ParsonsLogo"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+x="0px" y="0px"
+viewBox="0 0 318.8 50.9"
+style="enable-background:new 0 0 318.8 50.9;"
+xml:space="preserve"
+role="image"
+aria-labelledby="title desc"
+>
+<title>Parsons School of Design Logo</title>
+<desc></desc>
+      <g aria-hidden="true">
         <path d="M2.2,12v-1.8h316.6V12H2.2z"/>
       </g>
-      <g>
+      <g aria-hidden="true">
         <path d="M2.2,16v-1.8h52V16H2.2z"/>
       </g>
-      <g>
+      <g aria-hidden="true">
         <g>
           <g>
             <path d="M4.4,1.9v6.1h-2V1.9H0V0.2h6.9v1.8H4.4z"/>
@@ -60,7 +62,7 @@ export default {
           </g>
         </g>
       </g>
-      <g>
+      <g aria-hidden="true">
         <path class="st0" d="M56.4,14.2h27.9c9,0,13.4,5.7,13.4,12.3c0,7.9-6.4,12.7-13.4,12.7H65.4v11h-9V14.2z M65.4,22.3v9.2h17.5
           c4.4,0,5.4-2.5,5.4-4.8c0-1.9-1-4.4-5.4-4.4H65.4z"/>
         <path class="st0" d="M117.1,43.3H104l-2.5,6.9h-9.6l14.4-36h9.3l13.5,36h-9.8L117.1,43.3z M106.6,36h8.2l-3.9-12L106.6,36z"/>
@@ -93,6 +95,7 @@ footer > div{
   display:inline-block;
   vertical-align: top;
   margin-right: calc(var(--padding)*2);
+  margin-bottom:var(--padding);
 }
 svg#ParsonsLogo{
   width:200px;

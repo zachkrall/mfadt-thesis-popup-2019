@@ -28,6 +28,24 @@ section{
   max-width:900px;
 }
 
-section h1{
+section h1,
+section h2{
   padding-bottom: var(--padding);
+}
+
+p.measured{
+  max-width: 50ch;
+}
+
+a.btn{
+  color:inherit;
+  border:1px solid var(--text);
+  border-radius: 5px;
+  text-decoration:none;
+  padding: 0.25rem 0.3rem;
+  margin-right:0.25rem;
+}
+a.btn:hover{
+  background: var(--text);
+  color: var(--bg);
 }

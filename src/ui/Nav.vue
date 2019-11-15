@@ -1,7 +1,7 @@
 <template>
   <nav v-on:scroll.passive="scrollUpdate">
     <div>
-      <a href="#" v-on:click="scroll">{{ title }}</a>
+      <a href="/" v-on:click="scroll">{{ title }}</a>
     </div>
     <div class="hide-on-mobile">
       <a href="#about" v-on:click="scroll">About</a>
@@ -66,6 +66,7 @@ export default {
 nav{
   z-index:999999;
   position:fixed;
+  top:0;left:0;
   width: 100%;
   padding: var(--padding);
 

@@ -7,7 +7,7 @@
     </div> -->
       <div id="glitch-wrap" aria-label="Thesis Pop-Up">
         <div v-html="glitchText('THESIS')" aria-hidden="true"></div>
-        <div v-html="glitchText('POPUP')" aria-hidden="true"></div>
+        <div v-html="glitchText('POP-UP')" aria-hidden="true"></div>
       </div>
     <div id="bottom_text">
       <h2>SATURDAY, DECEMBER 14TH, 2019</h2>
@@ -53,9 +53,14 @@ header{
   align-items: center;
   justify-content: center;
   background: var(--bg);
-  height:100vh;
+  height: 100vh;
   min-height: 600px;
   color: var(--text);
+}
+@media screen and (max-width:600px){
+  header{
+    height:60vh;
+  }
 }
 header h2{
   font-weight:normal;
@@ -91,6 +96,10 @@ header h2{
 @media screen and (max-width: 500px){
   #bottom_text{
     display:block;
+    text-align:center;
+  }
+  #bottom_text h2{
+    margin-bottom: 1rem;
   }
 }
 #bottom_text > * {

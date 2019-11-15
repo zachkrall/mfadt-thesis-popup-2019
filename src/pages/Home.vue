@@ -4,6 +4,13 @@
     <About />
     <Projects />
     <Directions />
+    <section>
+        <h2>Acknowledgments</h2>
+        <div><b>Zhane Lloyd</b>, Lorem Ipsum</div>
+        <div><b>Kat Obermeyer</b>, Lorem Ipsum</div>
+        <div><b>Jeffrey Geiringer</b>, Promotional Design<div>
+        <div><b>Zach Krall</b>, Website Development</div>
+    </section>
   </div>
 </template>
 
