@@ -138,7 +138,7 @@ ul, li{ list-style:none;margin:0;padding:0;}
   display:inline-block;
   position:relative;
   flex-grow: 1;
-  z-index:99999999;
+  z-index:999;
 }
 #filter ul{
   position:absolute;
